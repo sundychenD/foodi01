@@ -64,9 +64,6 @@
     .navbar .nav > li > a {
       padding: 15px 20px;
     }
-    .navbar .nav {
-      margin-left: 350px;
-    }
 
     /* Offset the responsive button for proper vertical alignment */
     .navbar .btn-navbar {
@@ -77,8 +74,8 @@
     .head-logo {
       margin-top: -20px;
       margin-left: 33%;
-    	height: 240px;
-    	width: 400px;
+      height: 240px;
+      width: 400px;
     }
 
     /* The into above logo */
@@ -207,7 +204,23 @@
       font-family: helvetica;
       font-size: 15px;
     }
-
+    /* big foot */
+    .bigFoot {
+       padding-top: 150px; /* Vertically center images part 1.0: add padding above and below text. */
+       padding-bottom: 150px;/* Vertically center images part 1.1: add padding below and below text. */
+       padding-left: 30px; /* pdding left*/
+       padding-right: 30px; /* pdding right*/
+       overflow: hidden; /* Vertically center images part 2: clear their */
+       height: 80px; 
+       background-color:#303030; 
+       margin-bottom:-40px;
+    }
+    .bigFoot .bigFoot-image{
+       padding-left: 10px;
+       height:120px;
+       width:220px;
+       margin-top:-110px;
+    }
 
 
     /* RESPONSIVE CSS
@@ -242,6 +255,27 @@
         float: none;
         max-width: 40%;
         margin: 0 auto 20px;
+      }
+      .head-logo {
+        margin-top: 60px;
+        margin-left: 20%;
+    	height:120px;
+        width:220px;
+      }
+      .bigFoot {
+      	text-align: center;
+        padding-top: 0px; /* Vertically center images part 1.0: add padding above and below text. */
+        padding-bottom: 290px;/* Vertically center images part 1.1: add padding below and below text. */
+        /*overflow: hidden;  Vertically center images part 2: clear their */
+        height: 80px; 
+        background-color:#303030; 
+        margin-bottom:-40px;
+      }
+      .bigFoot .bigFoot-image{
+        padding-left: 10px;
+        height:120px;
+        width:220px;
+        margin-top:10px;
       }
     }
 
@@ -308,31 +342,32 @@
 
 
 
-
+ <!--==================
 
   <body>
-  <!-- NAVBAR
-    ================================================== -->
+   NAVBAR
+   ================================================== 
     <div class="navbar-wrapper">
-      <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+      <!- Wrap the .navbar in .container to center it within the absolutely positioned parent. ->
       <div class="container">
+
         <div class="navbar navbar-inverse">  	
 	        <div class="navbar-inner">	          
-	            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
-	            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	            <!- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. 
+	            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"->
 	              <span class="icon-bar"></span>
 	              <span class="icon-bar"></span>
 	              <span class="icon-bar"></span>
 	            </button>
 	            <a class="brand" href="/MainPage">Foodi</a>
-	            <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+	            <!- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. ->
 	            <div class="nav-collapse collapse">
 	              <ul class="nav">
 	                <li ><a ></a></li>
 	              </ul>
 	              
-	              <!--  Dropdown  -->
-	              <!-- Read about Bootstrap dropdowns at http://twbs.github.com/bootstrap/javascript.html#dropdowns -->
+	              <!-  Dropdown  ->
+	              <!- Read about Bootstrap dropdowns at http://twbs.github.com/bootstrap/javascript.html#dropdowns ->
 	              <ul class="nav">
 	              	<li ><a href="{{ url|safe }}">{{ url_linktext }}</a></li>
 	              	<li ><a href="/UserPage">{{ user_mail }}</a></li>
@@ -348,13 +383,53 @@
 	                  </ul>
 	                </li>
 	              </ul>
-	            </div><!--/.nav-collapse -->
-	          </div><!-- /.navbar-inner -->
+	            </div><!-/.nav-collapse ->
+	          </div><!- /.navbar-inner ->
+        </div><!- /.navbar ->
+      </div> <!- /.container ->
+    </div><!-/.navbar-wrapper ->
+    <!- END NAVBAR ->
+
+   	<!-============================-->
+
+     <!-- NAVBAR
+    ================================================== -->
+    <div class="navbar-wrapper">
+      <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+      <div class="container">
+
+        <div class="navbar navbar-inverse">
+          <div class="navbar-inner">
+            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="#">Foodi</a>
+            <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+                <li><a href="{{ url|safe }}">{{ url_linktext }}</a></li>
+                <li><a href="/UserPage">{{ user_mail }}</a></li>
+                <!-- Read about Bootstrap dropdowns at http://twbs.github.com/bootstrap/javascript.html#dropdowns -->
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="/About">About</a></li>
+                    <li><a href="/Contact">Contact</a></li>
+                    <li class="divider"></li>
+                    <li class="nav-header">Helping</li>
+                    <li><a href="/Privacy">Privacy</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div><!-- /.navbar-inner -->
         </div><!-- /.navbar -->
+
       </div> <!-- /.container -->
     </div><!-- /.navbar-wrapper -->
-    <!-- END NAVBAR -->
-
 
 
 
@@ -439,23 +514,25 @@ tellus ac cursus commodo.</p>
 
     <!-- Big Foot 
     ================================================== -->
-      <div class="featurette" style="height: 80px; background-color:#303030; margin-bottom:-40px;" >
-        <img class="featurette-image pull-left" src="../images/Red.png">
-        <!--<img class="featurette-image pull-right" src="#">-->
-        <h2 class= "bottom-p">
-          
-          <a href="mailto:sundychen1018@gmail.com?subject=from Foodi" style="text-decoration: none;">  Mail Me: Chen Di</a><br>
-          <a href="mailto:huwenyan@gmail.com?subject=from Foodi" style="text-decoration: none;">  Mail Me: Hu Wenyan</a><br>
-          <a href="#" style="text-decoration: none;">Contact</a><br>
-          <a href="#" style="text-decoration: none;">Bugs</a><br>
-          <a href="#" style="text-decoration: none;">Donate Us</a><br>
+    <div class="bigFoot">
+    	
+      <!--<div class="featurette" style="height: 80px; background-color:#303030; margin-bottom:-40px;" > -->
+	        <img class="bigFoot-image" src="../images/Red.png">
+	        <!--<img class="featurette-image pull-right" src="#">-->
+	        <h2 class= "bottom-p">
+	          
+	          <a href="mailto:sundychen1018@gmail.com?subject=from Foodi" style="text-decoration: none;">  Mail Me: Chen Di</a><br>
+	          <a href="mailto:huwenyan@gmail.com?subject=from Foodi" style="text-decoration: none;">  Mail Me: Hu Wenyan</a><br>
+	          <a href="#" style="text-decoration: none;">Contact</a><br>
+	          <a href="#" style="text-decoration: none;">Bugs</a><br>
+	          <a href="#" style="text-decoration: none;">Donate Us</a><br>
 
-        </h2><br>
-        <footer style="padding-left: 30px; padding-right:30px; ">
-          <p class="pull-right"><a href="#" style="text-decoration: none;">Back to top</a></p>
-          <p style="color: #828282">© 2013-2014 Foodi All Rights Reserved · <a href="#" style="text-decoration: none;">Privacy</a> · <a href="#" style="text-decoration: none;">Terms</a></p>
-        </footer>
-        
+	        </h2><br>
+	        <footer style="padding-left: 30px; padding-right:30px; ">
+	          <p class="pull-right"><a href="#" style="text-decoration: none;">Back to top</a></p>
+	          <p style="color: #828282">© 2013-2014 Foodi All Rights Reserved · <a href="#" style="text-decoration: none;">Privacy</a> · <a href="#" style="text-decoration: none;">Terms</a></p>
+	        </footer>
+       
       </div>
     <!-- /END BIG FOOF-->
 
@@ -466,21 +543,21 @@ tellus ac cursus commodo.</p>
     <!--  Script  -->
     <script src="../scripts/jquery.js"></script>
     <script src="../scripts/bootstrap-transition.js"></script>
-    
-
-
-
     <script src="../scripts/bootstrap-dropdown.js"></script>
-
-
-
-
-
-    
-    
-    
-    
     <script src="../scripts/bootstrap-carousel.js"></script>
+
+    <script>
+      !function ($) {
+        $(function(){
+          // carousel demo
+          $('#myCarousel').carousel()
+        })
+      }(window.jQuery)
+    </script>
+
+    <script src="../bootstrap-collapse.js"></script>
+    <script src="../holder.js"></script>
+
     
   
 
